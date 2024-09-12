@@ -30,12 +30,12 @@ def index():
 
     if request.method == 'POST':
         if 'file' not in request.files:
-            return "No se ha subido ningún archivo"
+            return "There's no file"
         
         file = request.files['file']
 
         if file.filename == '':
-            return "Nombre de archivo vacío"
+            return "Filename Empty"
 
         if file:
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], 'uploaded.xlsx')
@@ -48,7 +48,7 @@ def index():
             # Generar gráficos solo si los datos están disponibles
             try:
                 counts = dataSummary['didWeWon'].value_counts()
-                labels = ['Perdedor', 'Ganador']
+                labels = ['Loser', 'Winner']
                 sizes = counts
                 colors = ['cornflowerblue', 'gold']
                 fig_pie = go.Figure(data=[go.Pie(labels=labels, values=sizes)])
