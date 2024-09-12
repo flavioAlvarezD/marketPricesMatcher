@@ -18,8 +18,7 @@ options.add_argument("--disable-popup-blocking") # Evades popups
 options.add_argument("--start-maximized") # Specify launch options and resolution to assure consistency on results
 options.add_argument("--window-size=1920x1080")
 
-# Reads the selected csv and takes the info on the columns
-df = pd.read_csv('testlista2.csv')
+df = pd.read_excel('uploads/uploaded.xlsx')
 
 searchQueries = df.iloc[:, 0].tolist()
 productPrices = df.iloc[:, 1].tolist()
