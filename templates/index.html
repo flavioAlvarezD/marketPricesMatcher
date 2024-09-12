@@ -91,25 +91,46 @@
     <div class="background-overlay"></div>
     <h1>Data Analysis Dashboard</h1>
 
+    <!-- Upload file form -->
+    <div class="panel">
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="file">Upload your Excel file:</label>
+            <input type="file" name="file" id="file" required>
+            <button type="submit">Start process</button>
+        </form>
+    </div>
+
     <div class="panel">
         <h2>Gráficos</h2>
         <div class="charts-container">
             <div class="chart-pie">
-                <img src="data:image/png;base64,{{ img_pie|b64encode }}" alt="Pie Chart">
+                {% if img_pie %}
+                    <img src="data:image/png;base64,{{ img_pie|b64encode }}" alt="Pie Chart">
+                {% else %}
+                    <p>There's no data for this graphic.</p>
+                {% endif %}
             </div>
             <div class="chart-indicators">
                 <div class="chart-indicator">
-                    <img src="data:image/png;base64,{{ img_rank|b64encode }}" alt="Average Market Ranking">
+                    {% if img_rank %}
+                        <img src="data:image/png;base64,{{ img_rank|b64encode }}" alt="Average Market Ranking">
+                    {% else %}
+                        <p>There's no data for this graphic.</p>
+                    {% endif %}
                 </div>
                 <div class="chart-indicator">
-                    <img src="data:image/png;base64,{{ img_price|b64encode }}" alt="Average Price Difference">
+                    {% if img_price %}
+                        <img src="data:image/png;base64,{{ img_price|b64encode }}" alt="Average Price Difference">
+                    {% else %}
+                        <p>There's no data for this graphic.</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
 
     <div class="panel">
-        <h2>Resumen de Datos</h2>
+        <h2>Data Summary</h2>
         {{ tabla_resumen|safe }}
     </div>
 </body>
