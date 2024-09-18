@@ -44,6 +44,22 @@ The code is written and tested by default in MacOs. And this folder also has the
 
 In any case, once you extract the zip files, you'll need to put both folders inside the 'executables' folder. and verify the botscraper.py is referencing correctly the chromedriver and the chrome browser as well (it should be).
 
+In MacOs you might need to 'repair' the Chromedriver app and the Chrome for testing. If this message shows when you launch them:
+"You do not have permission to open the application"
+Or any other message...
+
+For this you'll have to open the terminal and write
+sudo spctl --master-disable
+It'll ask for your password, you just write it and press enter. Be warned; you could leave your machine vulnerable if you don't enable back it once you finish.
+
+Then you should write 'xattr -rc ' followed by the app path. It should look something like this:
+xattr -rc /path/to/your/app
+Do this for Chromedriver and your Chrome browser as well.
+
+REMEMBER to enable back the Gatekeeper by writing
+#sudo spctl -–master-enable
+A message showing 'spctl --status "assesments enabled"' should appear. Then you're good to go
+
 >Once installed and verified, you can run the program by writing on your terminal:
     pyton app.py
  Or by pressing the play button if you're using VSC 
@@ -62,6 +78,7 @@ Then you just upload the file and wait for the Chrome browser to launch itself a
 Once the scraping is completed, you'll see how the testing browser closes itself and a nice dashboard is generated on the same page of your main browser (where you uploaded your file)
 
 Fisrst thing you'll notice is a pie chart that's gonna tell you the percentage of products where you had the best price on the market. Then a couple of panels tellign you the average rank in the market you got with your prices. And how much was the average difference between the best price and your's.
+
 What's showed next is a table called 'Data Summary'. Each row for each product you uploaded. I'll explain to you what every column is talking about:
 productName: The name you uploaded and was used as query for the bot
 ourStorePrice: The price you uploaded and was used to make the comparison
@@ -86,7 +103,6 @@ Here are some of this ideas:
 5.- Download automatically the generated files such as the raw scraped data and the data summary showed at the end
 6.- Option to upload a CSV or Excel file, as well to download them on the same format
 7.- Option to write the name from 'ourStore' and find them on the data scraped. As well as notice if there's a difference between our actual prices an the ones Google Shopping is showing
-
 
 
         5.- ABOUT ME
