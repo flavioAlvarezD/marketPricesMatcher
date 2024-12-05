@@ -1,8 +1,8 @@
                          _.:::MARKET PRICES MATCHER:::._
 
                          IMPORTANT
-Here's a video showing how the webscraper works just in case the code can't be used in the future by a newer Chrome version. 
-
+Here's a video showing how the webscraper works just in case the code can't be used in the future because of a newer Chrome version. 
+https://www.linkedin.com/posts/flavio-alvarez-dorantes_market-price-matcher-using-web-scraping-activity-7251695026794086401-_NZH
 
         1.- ABOUT THIS PROJECT
 It uses flask as framework, selenium for data scraping and pandas for an easy data work and plotly to help me build nice graphics.
@@ -13,7 +13,7 @@ Now lets put ourselves in the situation:
 Let's suposse we have an ecommerce. It really doesn't matter what is about. But I did this project with a videogame ecommerce store in mind.
 We need at all times to be aware of the competitiveness of our prices. If there was a rank of stores based on their prices, what place in said rank should be assigned to our store?
 How many of our products have the best price on the market?
-How much is the price difference between our producta and those that have the best price?
+How much is the price difference between our product and those that have the best price?
 Well, my Price Matcher solves all of this questions in a nice dashboard
 
 Why did I make the matcher this way?
@@ -23,7 +23,7 @@ There's a couple of things I would like to clarify:
 3.- You are free to change the percentage defined to clean outliers. I you notice that the final table is showing products that are way too cheap; then you can increase the 'lowerB' percentage in the 'dataCleansing.py' file. Or the other way around if you think there should be more products taken into account when doing the analysis, then reduce this same variable.
 
 
-        2.- INSTALLING AND RUN
+        2.- INSTALLING AND RUNNING
 You obviously need to have python3 installed on your device.
 >I recommend to create a virtual environment before installing any library
     python -m venv webScraper
@@ -68,7 +68,7 @@ A message showing 'spctl --status "assesments enabled"' should appear. Then you'
 
 
         3.- HOW TO USE THE APP
-Well now let's go ahead with the fun part; you just need an excel file with two columns:
+Well... now let's go ahead with the fun part; you just need an excel file with two columns:
   -The first one will have the names from all the products you wish to search
   -Second one should have the respective prices (only numbers please)
 The header's name for the columns does not matter. But it should have one since the bot starts searching from the second row.
